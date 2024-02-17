@@ -200,7 +200,7 @@ import (
 	"github.com/wdvxdr1123/ZeroBot/driver"
 	"github.com/wdvxdr1123/ZeroBot/message"
 
-	// webctrl "github.com/FloatTech/zbputils/control/web"
+	 webctrl "github.com/FloatTech/zbputils/control/web"
 
 	"github.com/FloatTech/ZeroBot-Plugin/kanban/banner"
 	// -----------------------以上为内置依赖，勿动------------------------ //
@@ -220,11 +220,11 @@ func init() {
 	d := flag.Bool("d", false, "Enable debug level log and higher.")
 	w := flag.Bool("w", false, "Enable warning level log and higher.")
 	h := flag.Bool("h", false, "Display this help.")
-	// g := flag.String("g", "127.0.0.1:3000", "Set webui url.")
+	 g := flag.String("g", "127.0.0.1:8089", "Set webui url.")
 	// 直接写死 AccessToken 时，请更改下面第二个参数
 	token := flag.String("t", "", "Set AccessToken of WSClient.")
 	// 直接写死 URL 时，请更改下面第二个参数
-	url := flag.String("u", "ws://127.0.0.1:6700", "Set Url of WSClient.")
+	url := flag.String("u", "ws://yiran520.com:5800", "Set Url of WSClient.")
 	// 默认昵称
 	adana := flag.String("n", "椛椛", "Set default nickname.")
 	prefix := flag.String("p", "/", "Set command prefix.")
@@ -262,7 +262,7 @@ func init() {
 	// sus = append(sus, 87654321)
 
 	// 启用 webui
-	// go webctrl.RunGui(*g)
+	 go webctrl.RunGui(*g)
 
 	if *runcfg != "" {
 		f, err := os.Open(*runcfg)
